@@ -26,9 +26,21 @@
 /* Utility components */
 @layer components {
   .btn-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition;
+    @apply bg-green-700 hover:bg-green-800 text-white font-medium py-2 px-4 rounded transition shadow-sm;
   }
   .card {
-    @apply bg-white border rounded-xl p-4 hover:shadow-md transition;
+    @apply bg-white border border-gray-200 rounded p-4 hover:shadow-md transition;
+  }
+  .gov-header-bg {
+    background: linear-gradient(to bottom, #1e5631 0%, #1e5631 50%, #8b0000 50%, #8b0000 100%);
+  }
+  .gov-text-green {
+    color: #1e5631;
+  }
+  .gov-bg-green {
+    background-color: #1e5631;
+  }
+  .gov-bg-red {
+    background-color: #8b0000;
   }
 }
