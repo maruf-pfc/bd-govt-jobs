@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.4",
+    "@unhead/vue": "^3.1.0",
     "pinia": "^3.0.4",
     "tailwindcss": "^4.2.4",
     "unhead": "^3.1.0",
