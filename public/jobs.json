@@ -1,0 +1,32 @@
+[
+  {
+    "id": "bpsc-50th-bcs-2025",
+    "title": "৫০তম বিসিএস নিয়োগ পরীক্ষা ২০২৫",
+    "titleEn": "50th BCS Recruitment Examination 2025",
+    "organization": "বাংলাদেশ সরকারি কর্ম কমিশন (BPSC)",
+    "organizationEn": "Bangladesh Public Service Commission",
+    "division": "All Bangladesh",
+    "jobType": "BCS Cadre",
+    "vacancyQuota": {
+      "total": 2305,
+      "merit": 2144,
+      "freedomFighter": 115,
+      "ethnic": 23,
+      "disabled": 23
+    },
+    "payScale": "গ্রেড ৯: ৳৯,৭০০ - ৳২৩,৩৫০",
+    "payScaleEn": "Grade 9: Tk 9,700 - Tk 23,350",
+    "importantDates": {
+      "applyStart": "2025-12-04",
+      "applyEnd": "2025-12-24",
+      "examDate": "2026-04-10"
+    },
+    "applicationFee": "৳৩০০ (টেলিটক SMS)",
+    "applyLink": "https://bpsc.teletalk.com.bd",
+    "officialNotification": "https://bpsc.gov.bd/sites/default/files/files/bpsc.gov.bd/page/circular_50th_bcs_2025.pdf",
+    "howToApply": "১. bpsc.teletalk.com.bd ভিজিট করুন\n২. 'Apply Online' এ ক্লিক করুন\n৩. রেজিস্ট্রেশন করুন (NID/Birth Cert)\n৪. ছবি (৩০০x৪০০) ও স্বাক্ষর (৩০০x৮০) আপলোড করুন\n৫. ফরম পূরণ করে সাবমিট করুন\n৬. Teletalk: BPSC <UserID> <PIN> to 16222\n৭. Applicant's Copy ডাউনলোড ও প্রিন্ট করুন",
+    "howToApplyEn": "1. Visit bpsc.teletalk.com.bd\n2. Click Apply Online\n3. Register with NID/Birth Certificate\n4. Upload photo (300x400) & signature (300x80)\n5. Fill & submit form\n6. SMS: BPSC <UserID> <PIN> to 16222\n7. Download & print Applicant's Copy",
+    "sourceWebsite": "https://bpsc.gov.bd",
+    "lastUpdated": "2025-12-04T10:00:00+06:00"
+  }
+]

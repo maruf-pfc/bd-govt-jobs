@@ -1,23 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '@/views/HomeView.vue'
+import JobDetailView from '@/views/JobDetailView.vue'
 
-const router = createRouter({
+export default createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {
-      path: '/',
-      name: 'home',
+    { 
+      path: '/', 
+      name: 'home', 
       component: HomeView,
+      meta: { title: 'বাংলাদেশ সরকারি চাকরি - BD Govt Jobs' }
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
-    },
+    { 
+      path: '/jobs/:id', 
+      name: 'job-detail', 
+      component: JobDetailView, 
+      props: true,
+      meta: { title: 'Job Details - BD Govt Jobs' }
+    }
   ],
+  scrollBehavior: () => ({ top: 0 })
 })
-
-export default router
