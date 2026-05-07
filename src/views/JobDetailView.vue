@@ -23,11 +23,11 @@
       <div class="p-8 border-b-2 border-green-700 text-center space-y-2">
         <p class="text-sm font-bold text-gray-600">গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</p>
         <h2 class="text-xl font-black text-green-900 tracking-wide uppercase">{{ job.ministry || 'সংশ্লিষ্ট মন্ত্রণালয়' }}</h2>
-        <h1 class="text-2xl font-bold text-gray-900 leading-tight">{{ job.organization }}</h1>
+        <h1 class="text-2xl font-bold text-gray-900 leading-tight uppercase">{{ job.organization }}</h1>
         <p class="text-blue-700 font-bold underline">{{ job.sourceWebsite.replace('http://', '').replace('https://', '') }}</p>
       </div>
 
-      <!-- Reference & Date -->
+      <!-- Reference & Date Bar -->
       <div class="p-4 bg-gray-50 border-b flex flex-col md:flex-row justify-between items-center text-xs font-bold text-gray-600 gap-2">
         <div class="flex items-center gap-2">
           <span class="bg-gray-200 px-2 py-1 rounded">স্মারক নং:</span>
@@ -40,12 +40,38 @@
       </div>
 
       <div class="p-8">
+        <!-- QUICK ACTIONS (Priority Reordering) -->
+        <div class="bg-gray-50 border p-4 mb-8 flex flex-col sm:flex-row gap-4 items-center justify-center">
+          <a
+            :href="job.applyLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto bg-green-700 hover:bg-green-800 text-white px-6 py-3 font-bold flex items-center justify-center gap-2 transition"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+            অনলাইন আবেদন ফরম
+          </a>
+          <a
+            :href="job.officialNotification"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto border-2 border-green-700 text-green-700 hover:bg-green-50 px-6 py-3 font-bold flex items-center justify-center gap-2 transition"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            অফিসিয়াল বিজ্ঞপ্তি (PDF)
+          </a>
+        </div>
+
         <!-- Main Title Box -->
         <div class="border-4 border-double border-green-700 p-6 text-center mb-8">
           <h3 class="text-2xl font-black text-gray-900 uppercase tracking-tight">নিয়োগ বিজ্ঞপ্তি</h3>
         </div>
 
-        <p class="text-gray-800 leading-relaxed mb-8">
+        <p class="text-gray-800 leading-relaxed mb-8 indent-8">
           {{ job.organization }} এর রাজস্ব খাতভুক্ত নিম্নবর্ণিত শূন্য পদসমূহ পূরণের নিমিত্তে বাংলাদেশের স্থায়ী নাগরিকদের নিকট হতে অনলাইনে আবেদন আহ্বান করা যাচ্ছে:
         </p>
 
@@ -68,7 +94,7 @@
               </div>
               <div class="flex justify-between">
                 <span class="text-gray-500">চাকরির ধরন:</span>
-                <span class="bg-blue-50 text-blue-700 px-2 rounded font-bold">{{ job.jobType }}</span>
+                <span class="bg-blue-50 text-blue-700 px-2 rounded font-bold uppercase text-[10px]">{{ job.jobType }}</span>
               </div>
             </div>
           </div>
@@ -89,7 +115,7 @@
                 <span class="font-bold text-gray-900">{{ job.applicationFee }}</span>
               </div>
               <div class="flex justify-between items-center">
-                <span class="text-gray-500">অবশিষ্ট সময়:</span>
+                <span class="text-gray-500">স্থিতি:</span>
                 <StatusBadge :deadline="job.importantDates.applyEnd" />
               </div>
             </div>
@@ -100,37 +126,11 @@
         <div class="mb-10">
           <div class="flex items-center gap-2 mb-4">
             <div class="h-6 w-1 gov-bg-green"></div>
-            <h4 class="text-lg font-bold text-gray-800">আবেদনের নিয়মাবলী ও শর্তাবলী</h4>
+            <h4 class="text-lg font-bold text-gray-800 uppercase tracking-tight">আবেদনের নিয়মাবলী ও শর্তাবলী</h4>
           </div>
           <div class="bg-gray-50 border border-gray-100 p-6 text-sm leading-loose whitespace-pre-line text-gray-700">
             {{ job.howToApply }}
           </div>
-        </div>
-
-        <!-- Action Buttons (Teletalk Style) -->
-        <div class="flex flex-col md:flex-row gap-4 mb-8">
-          <a
-            :href="job.applyLink"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex-1 bg-green-700 hover:bg-green-800 text-white p-4 text-center font-bold shadow-md flex items-center justify-center gap-2 transition"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-            Online Application (অনলাইন আবেদন)
-          </a>
-          <a
-            :href="job.officialNotification"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex-1 bg-blue-700 hover:bg-blue-800 text-white p-4 text-center font-bold shadow-md flex items-center justify-center gap-2 transition"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Advertisement (ডাউনলোড সার্কুলার)
-          </a>
         </div>
 
         <!-- Official Footer Info -->
