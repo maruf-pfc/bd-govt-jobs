@@ -35,7 +35,7 @@ const router = createRouter({
       component: () => import('../views/CircularsView.vue'),
     },
     {
-      path: '/job/:id',
+      path: '/jobs/:id',
       name: 'job-detail',
       component: () => import('../views/JobDetailView.vue'),
     },
