@@ -1,7 +1,15 @@
 export interface ImportantDates {
-  applyStart: string
-  applyEnd: string
-  examDate?: string
+  applyStart: string // ISO: "2025-12-04"
+  applyEnd: string // ISO: "2025-12-24"
+  examDate?: string // Optional
+}
+
+export interface VacancyQuota {
+  total: number
+  merit: number
+  freedomFighter: number
+  ethnic: number
+  disabled: number
 }
 
 export interface Job {
@@ -10,11 +18,15 @@ export interface Job {
   titleEn: string
   organization: string
   organizationEn: string
+  ministry?: string
+  ministryEn?: string
   division: string
   jobType: string
   payScale: string
   payScaleEn: string
   importantDates: ImportantDates
+  circularRef?: string
+  circularDate?: string
   applicationFee: string
   applyLink: string
   officialNotification: string
@@ -22,4 +34,5 @@ export interface Job {
   howToApplyEn: string
   sourceWebsite: string
   lastUpdated: string
+  vacancyQuota?: VacancyQuota
 }

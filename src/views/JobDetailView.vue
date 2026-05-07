@@ -1,93 +1,156 @@
 <template>
-  <div class="container mx-auto px-4 py-6 max-w-4xl">
+  <div class="max-w-4xl mx-auto py-8">
     <!-- Back Button -->
-    <RouterLink to="/" class="inline-flex items-center text-blue-600 hover:underline mb-4">
-      ← ফিরে যান
+    <RouterLink to="/" class="inline-flex items-center text-green-700 hover:underline mb-6 font-bold">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
+      সকল বিজ্ঞপ্তি
     </RouterLink>
 
     <!-- Loading State -->
-    <div v-if="!job" class="text-center text-gray-500 py-12">জবটি লোড হচ্ছে...</div>
+    <div v-if="!job" class="bg-white border rounded p-12 text-center text-gray-500 shadow-sm">
+      <div class="animate-pulse space-y-4">
+        <div class="h-8 bg-gray-100 rounded w-3/4 mx-auto"></div>
+        <div class="h-4 bg-gray-100 rounded w-1/2 mx-auto"></div>
+        <div class="h-64 bg-gray-50 rounded mt-8"></div>
+      </div>
+    </div>
 
-    <!-- Job Detail Card -->
-    <article v-else class="bg-white rounded-2xl shadow-lg overflow-hidden">
-      <!-- Header -->
-      <header class="bg-linear-to-r from-blue-700 to-blue-600 text-white p-6">
-        <h1 class="text-2xl font-bold">{{ job.title }}</h1>
-        <p class="mt-1 text-blue-100">{{ job.organization }}</p>
-        <div class="mt-3 flex flex-wrap gap-2">
-          <span class="px-3 py-1 bg-white/20 rounded-full text-sm">{{ job.jobType }}</span>
-          <span class="px-3 py-1 bg-white/20 rounded-full text-sm">📍 {{ job.division }}</span>
-          <StatusBadge :deadline="job.importantDates.applyEnd" />
+    <!-- Official Notice Content -->
+    <div v-else class="bg-white border shadow-sm print:shadow-none print:border-none">
+      <!-- Notice Header -->
+      <div class="p-8 border-b-2 border-green-700 text-center space-y-2">
+        <p class="text-sm font-bold text-gray-600">গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</p>
+        <h2 class="text-xl font-black text-green-900 tracking-wide uppercase">{{ job.ministry || 'সংশ্লিষ্ট মন্ত্রণালয়' }}</h2>
+        <h1 class="text-2xl font-bold text-gray-900 leading-tight">{{ job.organization }}</h1>
+        <p class="text-blue-700 font-bold underline">{{ job.sourceWebsite.replace('http://', '').replace('https://', '') }}</p>
+      </div>
+
+      <!-- Reference & Date -->
+      <div class="p-4 bg-gray-50 border-b flex flex-col md:flex-row justify-between items-center text-xs font-bold text-gray-600 gap-2">
+        <div class="flex items-center gap-2">
+          <span class="bg-gray-200 px-2 py-1 rounded">স্মারক নং:</span>
+          <span>{{ job.circularRef || 'উল্লেখ নেই' }}</span>
         </div>
-      </header>
-
-      <!-- Content -->
-      <div class="p-6 space-y-6">
-        <!-- Salary & Dates -->
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-blue-50 p-4 rounded-lg">
-            <p class="text-xs text-gray-500">বেতন স্কেল</p>
-            <p class="font-bold text-lg">{{ job.payScale }}</p>
-          </div>
-          <div class="bg-red-50 p-4 rounded-lg">
-            <p class="text-xs text-gray-500">আবেদন শেষ</p>
-            <p class="font-bold text-lg text-red-600">
-              {{ formatDate(job.importantDates.applyEnd) }}
-            </p>
-          </div>
+        <div class="flex items-center gap-2">
+          <span class="bg-gray-200 px-2 py-1 rounded">তারিখ:</span>
+          <span>{{ formatDate(job.circularDate || job.lastUpdated) }}</span>
         </div>
+      </div>
 
-        <!-- Key Info -->
-        <div class="grid md:grid-cols-3 gap-4 text-sm">
-          <div>
-            <p class="text-gray-500 text-xs">আবেদন ফি</p>
-            <p class="font-medium">{{ job.applicationFee }}</p>
-          </div>
-          <div>
-            <p class="text-gray-500 text-xs">মোট পদ</p>
-            <p class="font-medium">{{ job.vacancyQuota?.total || 'N/A' }}</p>
-          </div>
-          <div>
-            <p class="text-gray-500 text-xs">যোগ্যতা</p>
-            <p class="font-medium">বিজ্ঞপ্তি দেখুন</p>
-          </div>
+      <div class="p-8">
+        <!-- Main Title Box -->
+        <div class="border-4 border-double border-green-700 p-6 text-center mb-8">
+          <h3 class="text-2xl font-black text-gray-900 uppercase tracking-tight">নিয়োগ বিজ্ঞপ্তি</h3>
         </div>
 
-        <!-- How to Apply -->
-        <section>
-          <h2 class="font-semibold mb-2">📝 কিভাবে আবেদন করবেন</h2>
-          <pre class="whitespace-pre-wrap bg-gray-50 p-4 rounded-lg text-sm leading-relaxed">{{
-            job.howToApply
-          }}</pre>
-        </section>
+        <p class="text-gray-800 leading-relaxed mb-8">
+          {{ job.organization }} এর রাজস্ব খাতভুক্ত নিম্নবর্ণিত শূন্য পদসমূহ পূরণের নিমিত্তে বাংলাদেশের স্থায়ী নাগরিকদের নিকট হতে অনলাইনে আবেদন আহ্বান করা যাচ্ছে:
+        </p>
 
-        <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t">
+        <!-- Summary Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div class="border rounded">
+            <div class="bg-gray-100 px-4 py-2 border-b font-bold text-sm">পদের বিবরণ ও বেতন</div>
+            <div class="p-4 space-y-3 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-500">পদের নাম:</span>
+                <span class="font-bold text-right">{{ job.title }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">বেতন স্কেল:</span>
+                <span class="font-bold">{{ job.payScale }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">পদ সংখ্যা:</span>
+                <span class="font-bold">{{ job.vacancyQuota?.total || 'বিজ্ঞপ্তি দেখুন' }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">চাকরির ধরন:</span>
+                <span class="bg-blue-50 text-blue-700 px-2 rounded font-bold">{{ job.jobType }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="border rounded border-red-100">
+            <div class="bg-red-50 px-4 py-2 border-b border-red-100 font-bold text-sm text-red-800">আবেদনের সময়সীমা</div>
+            <div class="p-4 space-y-3 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-500">আবেদন শুরু:</span>
+                <span class="font-bold text-green-700">{{ formatDate(job.importantDates.applyStart) }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">আবেদন শেষ:</span>
+                <span class="font-bold text-red-600">{{ formatDate(job.importantDates.applyEnd) }}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">আবেদন ফি:</span>
+                <span class="font-bold text-gray-900">{{ job.applicationFee }}</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-500">অবশিষ্ট সময়:</span>
+                <StatusBadge :deadline="job.importantDates.applyEnd" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- How to Apply Section -->
+        <div class="mb-10">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="h-6 w-1 gov-bg-green"></div>
+            <h4 class="text-lg font-bold text-gray-800">আবেদনের নিয়মাবলী ও শর্তাবলী</h4>
+          </div>
+          <div class="bg-gray-50 border border-gray-100 p-6 text-sm leading-loose whitespace-pre-line text-gray-700">
+            {{ job.howToApply }}
+          </div>
+        </div>
+
+        <!-- Action Buttons (Teletalk Style) -->
+        <div class="flex flex-col md:flex-row gap-4 mb-8">
           <a
             :href="job.applyLink"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex-1 text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition"
+            class="flex-1 bg-green-700 hover:bg-green-800 text-white p-4 text-center font-bold shadow-md flex items-center justify-center gap-2 transition"
           >
-            🔗 অফিসিয়াল লিংকে আবেদন করুন
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            Online Application (অনলাইন আবেদন)
           </a>
           <a
             :href="job.officialNotification"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex-1 text-center border border-blue-600 text-blue-600 py-3 rounded-xl hover:bg-blue-50 transition"
+            class="flex-1 bg-blue-700 hover:bg-blue-800 text-white p-4 text-center font-bold shadow-md flex items-center justify-center gap-2 transition"
           >
-            📄 বিজ্ঞপ্তি ডাউনলোড (PDF)
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Advertisement (ডাউনলোড সার্কুলার)
           </a>
         </div>
 
-        <!-- Disclaimer -->
-        <p class="text-xs text-gray-400 text-center pt-4">
-          সর্বশেষ আপডেট: {{ formatDate(job.lastUpdated) }} •
-          <span class="text-red-500">⚠️</span> আবেদনের আগে অফিসিয়াল সাইট দেখুন
-        </p>
+        <!-- Official Footer Info -->
+        <div class="border-t pt-6 text-center text-xs text-gray-500 italic">
+          <p>For more information please visit: <a :href="job.sourceWebsite" target="_blank" class="text-blue-600 font-bold hover:underline">{{ job.sourceWebsite }}</a></p>
+          <p class="mt-4 font-bold text-gray-400">সর্বশেষ আপডেট: {{ formatDate(job.lastUpdated) }}</p>
+        </div>
       </div>
-    </article>
+    </div>
+
+    <!-- Print Button (Floating) -->
+    <button 
+      @click="window.print()" 
+      class="fixed bottom-8 right-8 bg-gray-800 text-white p-3 rounded-full shadow-xl hover:bg-black transition print:hidden"
+      title="প্রিন্ট করুন"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+      </svg>
+    </button>
   </div>
 </template>
 
@@ -105,11 +168,26 @@ const job = computed<Job | undefined>(() =>
 )
 
 const formatDate = (iso: string) => {
-  if (!iso) return 'N/A'
+  if (!iso) return 'উল্লেখ নেই'
   return new Date(iso).toLocaleDateString('bn-BD', {
     day: 'numeric',
-    month: 'short',
+    month: 'long',
     year: 'numeric',
   })
 }
+
+const window = globalThis as any
 </script>
+
+<style>
+@media print {
+  body {
+    background: white;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+</style>

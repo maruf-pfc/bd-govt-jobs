@@ -5,8 +5,12 @@
     "titleEn": "50th BCS Recruitment Examination 2025",
     "organization": "বাংলাদেশ সরকারি কর্ম কমিশন (BPSC)",
     "organizationEn": "Bangladesh Public Service Commission",
+    "ministry": "জনপ্রশাসন মন্ত্রণালয়",
+    "ministryEn": "Ministry of Public Administration",
     "division": "All Bangladesh",
     "jobType": "BCS Cadre",
+    "circularRef": "36.09.0000.001.11.037.25/77",
+    "circularDate": "2025-12-01",
     "vacancyQuota": {
       "total": 2305,
       "merit": 2144,
@@ -28,5 +32,31 @@
     "howToApplyEn": "1. Visit bpsc.teletalk.com.bd\n2. Click Apply Online\n3. Register with NID/Birth Certificate\n4. Upload photo (300x400) & signature (300x80)\n5. Fill & submit form\n6. SMS: BPSC <UserID> <PIN> to 16222\n7. Download & print Applicant's Copy",
     "sourceWebsite": "https://bpsc.gov.bd",
     "lastUpdated": "2025-12-04T10:00:00+06:00"
+  },
+  {
+    "id": "bab-recruitment-2026",
+    "title": "বাংলাদেশ অ্যাক্রেডিটেশন বোর্ড (BAB) নিয়োগ বিজ্ঞপ্তি ২০২৬",
+    "titleEn": "Bangladesh Accreditation Board (BAB) Recruitment 2026",
+    "organization": "বাংলাদেশ অ্যাক্রেডিটেশন বোর্ড",
+    "organizationEn": "Bangladesh Accreditation Board",
+    "ministry": "শিল্প মন্ত্রণালয়",
+    "ministryEn": "Ministry of Industries",
+    "division": "Dhaka",
+    "jobType": "Non-Cadre",
+    "circularRef": "36.09.0000.001.11.037.25/77",
+    "circularDate": "2026-04-01",
+    "payScale": "গ্রেড ১১-২০",
+    "payScaleEn": "Grade 11-20",
+    "importantDates": {
+      "applyStart": "2026-04-06",
+      "applyEnd": "2026-05-05"
+    },
+    "applicationFee": "৳১০০-৩০০",
+    "applyLink": "http://bab.teletalk.com.bd",
+    "officialNotification": "http://www.bab.gov.bd/sites/default/files/files/bab.portal.gov.bd/notices/circular_2026.pdf",
+    "howToApply": "অনলাইনে bab.teletalk.com.bd এর মাধ্যমে আবেদন করুন।",
+    "howToApplyEn": "Apply online through bab.teletalk.com.bd",
+    "sourceWebsite": "http://www.bab.gov.bd",
+    "lastUpdated": "2026-04-01T09:00:00+06:00"
   }
 ]
