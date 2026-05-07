@@ -77,6 +77,16 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'প্রাথমিক শিক্ষক নিয়োগ প্রস্তুতি গাইডলাইন | প্রাইমারি শিক্ষক নিয়োগ ২০২৪',
+  meta: [
+    { name: 'description', content: 'সরকারি প্রাথমিক বিদ্যালয়ের সহকারী শিক্ষক নিয়োগ পরীক্ষার পূর্ণাঙ্গ সিলেবাস, মানবন্টন ও প্রস্তুতির কৌশল।' },
+    { name: 'keywords', content: 'Primary Teacher Recruitment, Primary Teacher Syllabus, প্রাথমিক শিক্ষক নিয়োগ প্রস্তুতি, প্রাইমারি গাইডলাইন' }
+  ]
+})
+
 const marks = [
   { subject: 'বাংলা', marks: 20 },
   { subject: 'ইংরেজি', marks: 20 },

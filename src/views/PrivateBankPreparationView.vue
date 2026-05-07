@@ -69,6 +69,16 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'প্রাইভেট ব্যাংক জব প্রস্তুতি | বেসরকারি ব্যাংক নিয়োগ গাইডলাইন',
+  meta: [
+    { name: 'description', content: 'বেসরকারি ব্যাংকের ট্রেইনি অফিসার ও প্রবেশনারি অফিসার পদের নিয়োগ প্রক্রিয়া, প্রয়োজনীয় দক্ষতা ও প্রস্তুতির নিয়ম।' },
+    { name: 'keywords', content: 'Private Bank Job Preparation, Private Bank Exam Pattern, প্রাইভেট ব্যাংক জব, ব্যাংক নিয়োগ' }
+  ]
+})
+
 const positions = [
   'Trainee Officer', 'Probationary Officer', 'Executive Officer',
   'Junior Officer', 'Customer Service Officer', 'Relationship Officer',

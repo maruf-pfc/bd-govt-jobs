@@ -194,6 +194,15 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'বিসিএস (BCS) প্রস্তুতি পূর্ণাঙ্গ গাইডলাইন | সিলেবাস ও বুক-লিস্ট',
+  meta: [
+    { name: 'description', content: '৫১তম বিসিএস পরীক্ষার প্রিলিমিনারি, লিখিত ও ভাইভা প্রস্তুতির পূর্ণাঙ্গ সিলেবাস, মানবন্টন এবং প্রয়োজনীয় বইয়ের তালিকা।' },
+    { name: 'keywords', content: 'BCS Preparation, BCS Syllabus, বিসিএস প্রস্তুতি, বিসিএস সিলেবাস, বিসিএস বুক লিস্ট' }
+  ]
+})
 
 const activeTab = ref('preli')
 

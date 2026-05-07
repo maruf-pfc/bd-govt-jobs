@@ -155,17 +155,56 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { onMounted, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useHead } from '@unhead/vue'
 import { useJobStore } from '@/stores/jobStore'
 import StatusBadge from '@/components/StatusBadge.vue'
 import type { Job } from '@/types'
 
 const route = useRoute()
 const store = useJobStore()
-const job = computed<Job | undefined>(() =>
-  store.jobs.find((j) => j.id === (route.params.id as string)),
-)
+
+const jobId = computed(() => route.params.id as string)
+const job = computed(() => store.jobs.find((j) => j.id === jobId.value))
+
+// SEO and JSON-LD
+watch(() => job.value, (newJob) => {
+  if (newJob) {
+    useHead({
+      title: `${newJob.title} - ${newJob.ministry} | সরকারি চাকরি`,
+      meta: [
+        { name: 'description', content: `${newJob.ministry} এর অধীনে ${newJob.title} পদে নিয়োগ বিজ্ঞপ্তি। আবেদনের শেষ তারিখ: ${newJob.importantDates.applyEnd}` }
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "JobPosting",
+            "title": newJob.title,
+            "description": `${newJob.ministry} এর অধীনে ${newJob.title} পদে নিয়োগ।`,
+            "datePosted": newJob.circularDate || newJob.lastUpdated,
+            "validThrough": newJob.importantDates.applyEnd,
+            "hiringOrganization": {
+              "@type": "Organization",
+              "name": newJob.ministry,
+              "logo": "/favicon.svg"
+            },
+            "jobLocation": {
+              "@type": "Place",
+              "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Bangladesh",
+                "addressCountry": "BD"
+              }
+            }
+          })
+        }
+      ]
+    })
+  }
+}, { immediate: true })
 
 const formatDate = (iso: string) => {
   if (!iso) return 'উল্লেখ নেই'

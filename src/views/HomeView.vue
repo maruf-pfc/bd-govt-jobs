@@ -81,11 +81,20 @@
 
 <script setup lang="ts">
 import { onMounted, computed } from 'vue'
+import { useHead } from '@unhead/vue'
 import { useJobStore } from '@/stores/jobStore'
 import FilterBar from '@/components/FilterBar.vue'
 import JobCard from '@/components/JobCard.vue'
 
 const store = useJobStore()
+
+useHead({
+  title: 'সর্বশেষ সরকারি নিয়োগ বিজ্ঞপ্তি | বাংলাদেশ সরকারি চাকরি পোর্টাল',
+  meta: [
+    { name: 'description', content: 'বাংলাদেশ সরকারের সকল মন্ত্রণালয় ও অধিদপ্তরের সর্বশেষ নিয়োগ বিজ্ঞপ্তিগুলো একসাথে দেখুন। বিসিএস ও ব্যাংক জব প্রস্তুতির পূর্ণাঙ্গ গাইডলাইন।' }
+  ]
+})
+
 onMounted(store.fetchJobs)
 
 const loading = computed(() => store.loading)
