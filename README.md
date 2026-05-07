@@ -1,48 +1,64 @@
-# 🇧🇩 Bangladesh Govt Job Portal
+# 🇧🇩 Bangladesh Govt Jobs Portal
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern, high-fidelity recruitment information portal for the Government of the People's Republic of Bangladesh. This platform centralizes job notices, circulars, and comprehensive career preparation guidelines in a neutral, official design language.
 
-## Recommended IDE Setup
+## ✨ Key Features
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Official Branding**: Adheres to the official Government of Bangladesh design system, using the official seal and a formal green-red palette.
+- **Job Circular Hub**: Centralized repository of active government job notices with metadata (Ministry, Circular Date, Application Link).
+- **Advanced Filtering**: Filter jobs by Division, Job Type (Full-time/Part-time), and Status (Active/Expired).
+- **Preparation Hub**: Comprehensive guidelines for major competitive exams:
+  - **BCS Preparation**: Detailed marks distribution, subject-wise strategies, and recommended booklists.
+  - **Govt Bank Preparation**: Strategic guides for Sr. Officer and Assistant Director (AD) positions.
+  - **Private Bank Preparation**: Insights into the private banking recruitment process and required skills.
+- **Quick Access Action Bar**: One-click access to official "Online Application" forms and "PDF Circulars" from the Job Detail view.
+- **Print-Optimized**: Job notices are optimized for printing directly from the browser.
 
-## Recommended Browser Setup
+## 🛠 Tech Stack
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- **Framework**: [Vue 3](https://vuejs.org/) (Composition API)
+- **Build Tool**: [Vite 6](https://vite.dev/)
+- **State Management**: [Pinia](https://pinia.vuejs.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Package Manager**: [Bun](https://bun.sh/)
 
-## Type Support for `.vue` Imports in TS
+## 📁 Project Structure
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-bun install
+```text
+src/
+├── assets/          # Static assets (Official Logo, CSS)
+├── components/      # Reusable UI components (JobCard, FilterBar)
+├── router/          # Vue Router configuration (Multi-page guidelines)
+├── stores/          # Pinia stores (Job State Management)
+└── views/           # Page views (Home, Preparation, Job Details)
+public/
+└── jobs.json        # Centralized recruitment data source
 ```
 
-### Compile and Hot-Reload for Development
+## 🚀 Getting Started
 
-```sh
-bun dev
-```
+### Prerequisites
 
-### Type-Check, Compile and Minify for Production
+- [Bun](https://bun.sh/) installed on your system.
 
-```sh
-bun run build
-```
+### Installation
 
-### Lint with [ESLint](https://eslint.org/)
+1. Clone the repository
+2. Install dependencies:
+   ```sh
+   bun install
+   ```
+3. Run the development server:
+   ```sh
+   bun dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-```sh
-bun lint
-```
+## 📄 License
+
+This project is intended for informational and educational purposes. All job data is sourced from official government portals (`teletalk.com.bd`, `bpsc.gov.bd`, etc.).
+
+---
+
+**Developed for the betterment of job seekers in Bangladesh.**

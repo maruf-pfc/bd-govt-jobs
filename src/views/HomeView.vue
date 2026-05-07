@@ -1,26 +1,48 @@
 <template>
-  <div class="max-w-6xl mx-auto">
-    <!-- Welcome Section -->
-    <section class="mb-8 bg-green-50 border-l-4 border-green-700 p-6 rounded-r">
-      <h2 class="text-2xl font-bold text-green-900 mb-2">স্বাগতম, সরকারি চাকরির তথ্য পোর্টালে</h2>
-      <p class="text-green-800">
-        বাংলাদেশ সরকারের বিভিন্ন মন্ত্রণালয়, অধিদপ্তর এবং সংস্থার সর্বশেষ নিয়োগ বিজ্ঞপ্তিগুলো এখানে একসাথে পাবেন।
-      </p>
-    </section>
+  <div class="max-w-6xl mx-auto space-y-8">
+    <!-- Welcome & Highlight Section -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section class="md:col-span-2 bg-green-50 border-l-4 border-green-700 p-6 rounded-r">
+        <h2 class="text-2xl font-bold text-green-900 mb-2">স্বাগতম, সরকারি চাকরির তথ্য পোর্টালে</h2>
+        <p class="text-green-800">
+          বাংলাদেশ সরকারের বিভিন্ন মন্ত্রণালয়, অধিদপ্তর এবং সংস্থার সর্বশেষ নিয়োগ বিজ্ঞপ্তিগুলো এখানে একসাথে পাবেন।
+        </p>
+      </section>
+
+      <!-- Prep Cards -->
+      <div class="space-y-4">
+        <RouterLink to="/preparation/bcs" class="block bg-white border-2 border-green-700 p-4 rounded-xl shadow-sm hover:bg-green-50 transition">
+          <h3 class="text-sm font-black text-green-900">বিসিএস প্রস্তুতি</h3>
+          <p class="text-[10px] text-gray-500 mt-1">সিলেবাস ও প্রস্তুতি কৌশল →</p>
+        </RouterLink>
+        <RouterLink to="/preparation/bank-govt" class="block bg-white border-2 border-blue-700 p-4 rounded-xl shadow-sm hover:bg-blue-50 transition">
+          <h3 class="text-sm font-black text-blue-900">সরকারি ব্যাংক প্রস্তুতি</h3>
+          <p class="text-[10px] text-gray-500 mt-1">পূর্ণাঙ্গ গাইডলাইন →</p>
+        </RouterLink>
+      </div>
+
+      <div class="space-y-4">
+        <RouterLink to="/preparation/bank-private" class="block bg-white border-2 border-indigo-700 p-4 rounded-xl shadow-sm hover:bg-indigo-50 transition">
+          <h3 class="text-sm font-black text-indigo-900">প্রাইভেট ব্যাংক প্রস্তুতি</h3>
+          <p class="text-[10px] text-gray-500 mt-1">নিয়োগ প্রক্রিয়া ও গাইডলাইন →</p>
+        </RouterLink>
+        <RouterLink to="/preparation/teacher" class="block bg-white border-2 border-yellow-600 p-4 rounded-xl shadow-sm hover:bg-yellow-50 transition">
+          <h3 class="text-sm font-black text-yellow-700">প্রাথমিক শিক্ষক প্রস্তুতি</h3>
+          <p class="text-[10px] text-gray-500 mt-1">পূর্ণাঙ্গ সিলেবাস ও কৌশল →</p>
+        </RouterLink>
+      </div>
+    </div>
 
     <!-- Filters -->
     <FilterBar />
 
     <!-- Results Section -->
-    <div class="flex items-center justify-between mb-6">
+    <div class="flex items-center justify-between">
       <div class="flex items-center gap-2">
         <span class="text-lg font-bold text-gray-800">সর্বশেষ বিজ্ঞপ্তি সমূহ</span>
         <span class="bg-gray-200 text-gray-700 px-2 py-0.5 rounded-full text-xs font-bold">
           {{ filteredJobs.length }}টি পাওয়া গেছে
         </span>
-      </div>
-      <div class="hidden md:flex gap-2">
-        <button class="text-xs font-bold text-blue-600 hover:underline">নতুন থেকে পুরাতন ↓</button>
       </div>
     </div>
 

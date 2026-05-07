@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+
+const isPrepOpen = ref(false)
 </script>
 
 <template>
@@ -30,8 +33,8 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <!-- Navigation -->
       <nav class="bg-gray-100 border-y border-gray-200">
-        <div class="container mx-auto px-4 overflow-x-auto">
-          <ul class="flex whitespace-nowrap">
+        <div class="container mx-auto px-4 overflow-visible">
+          <ul class="flex">
             <li>
               <RouterLink 
                 to="/" 
@@ -41,25 +44,59 @@ import { RouterLink, RouterView } from 'vue-router'
                 Home
               </RouterLink>
             </li>
-            <li>
-              <a href="#" class="inline-block py-3 px-4 text-sm font-medium text-gray-600 border-b-2 border-transparent hover:text-green-700 hover:bg-gray-50 transition">
-                Download Applicant's Copy
-              </a>
+
+            <!-- Preparation Dropdown -->
+            <li class="relative group" @mouseenter="isPrepOpen = true" @mouseleave="isPrepOpen = false">
+              <button 
+                class="flex items-center gap-1 py-3 px-4 text-sm font-medium border-b-2 transition"
+                :class="$route.path.startsWith('/preparation') ? 'border-green-700 text-green-700 bg-white' : 'border-transparent text-gray-600 hover:text-green-700 hover:bg-gray-50'"
+              >
+                প্রস্তুতি (Preparation)
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              
+              <!-- Dropdown Menu -->
+              <div 
+                v-show="isPrepOpen"
+                class="absolute left-0 top-full w-64 bg-white border shadow-xl rounded-b-lg z-50 py-2 animate-in fade-in slide-in-from-top-2 duration-200"
+              >
+                <RouterLink to="/preparation/bcs" class="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 font-medium">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-green-700 rounded-full"></span>
+                    বিসিএস প্রস্তুতি (BCS)
+                  </div>
+                </RouterLink>
+                <RouterLink to="/preparation/bank-govt" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 font-medium border-t border-gray-50">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-blue-700 rounded-full"></span>
+                    সরকারি ব্যাংক প্রস্তুতি (Govt Bank)
+                  </div>
+                </RouterLink>
+                <RouterLink to="/preparation/bank-private" class="block px-4 py-3 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 font-medium border-t border-gray-50">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-indigo-700 rounded-full"></span>
+                    প্রাইভেট ব্যাংক প্রস্তুতি (Private Bank)
+                  </div>
+                </RouterLink>
+                <RouterLink to="/preparation/teacher" class="block px-4 py-3 text-sm text-gray-700 hover:bg-yellow-50 hover:text-yellow-700 font-medium border-t border-gray-50">
+                  <div class="flex items-center gap-3">
+                    <span class="w-2 h-2 bg-yellow-600 rounded-full"></span>
+                    প্রাথমিক শিক্ষক প্রস্তুতি (Primary)
+                  </div>
+                </RouterLink>
+              </div>
             </li>
+
             <li>
-              <a href="#" class="inline-block py-3 px-4 text-sm font-medium text-gray-600 border-b-2 border-transparent hover:text-green-700 hover:bg-gray-50 transition">
-                Payment Status
-              </a>
-            </li>
-            <li>
-              <a href="#" class="inline-block py-3 px-4 text-sm font-medium text-gray-600 border-b-2 border-transparent hover:text-green-700 hover:bg-gray-50 transition">
-                Recover User
-              </a>
-            </li>
-            <li>
-              <a href="#" class="inline-block py-3 px-4 text-sm font-medium text-gray-600 border-b-2 border-transparent hover:text-green-700 hover:bg-gray-50 transition">
-                Admit Card
-              </a>
+              <RouterLink 
+                to="/circulars" 
+                class="inline-block py-3 px-4 text-sm font-medium border-b-2 transition"
+                :class="$route.name === 'circulars' ? 'border-green-700 text-green-700 bg-white' : 'border-transparent text-gray-600 hover:text-green-700 hover:bg-gray-50'"
+              >
+                সকল বিজ্ঞপ্তি
+              </RouterLink>
             </li>
           </ul>
         </div>
@@ -95,5 +132,10 @@ import { RouterLink, RouterView } from 'vue-router'
 
 .router-link-active {
   @apply border-green-700 text-green-700 bg-white;
+}
+
+.animate-in {
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
 }
 </style>

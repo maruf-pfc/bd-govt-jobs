@@ -1,5 +1,38 @@
 [
   {
+    "id": "bab-recruitment-2026",
+    "title": "বাংলাদেশ অ্যাক্রেডিটেশন বোর্ড (BAB) নিয়োগ বিজ্ঞপ্তি ২০২৬",
+    "titleEn": "Bangladesh Accreditation Board (BAB) Recruitment 2026",
+    "organization": "বাংলাদেশ অ্যাক্রেডিটেশন বোর্ড",
+    "organizationEn": "Bangladesh Accreditation Board",
+    "ministry": "শিল্প মন্ত্রণালয়",
+    "ministryEn": "Ministry of Industries",
+    "division": "Dhaka",
+    "jobType": "Non-Cadre",
+    "circularRef": "36.09.0000.001.11.037.25/77",
+    "circularDate": "2026-04-01",
+    "payScale": "গ্রেড ৬-২০ (৳৮,২৫০ - ৳৬৭,০১০)",
+    "payScaleEn": "Grade 6-20 (Tk 8,250 - 67,010)",
+    "importantDates": {
+      "applyStart": "2026-04-06",
+      "applyEnd": "2026-05-05"
+    },
+    "applicationFee": "৳৫৬ - ৳২২৩",
+    "applyLink": "https://bab.teletalk.com.bd",
+    "officialNotification": "https://www.bab.gov.bd/sites/default/files/files/bab.portal.gov.bd/notices/circular_2026.pdf",
+    "howToApply": "১. bab.teletalk.com.bd ভিজিট করুন।\n২. Application Form এ ক্লিক করুন।\n৩. পদের নাম সিলেক্ট করে আবেদন ফর্ম পূরণ করুন।\n৪. ৩০০x৩০০ সাইজের ছবি এবং ৩০০x৮০ সাইজের স্বাক্ষর আপলোড করুন।\n৫. সাবমিট করার পর প্রাপ্ত User ID ব্যবহার করে টেলিটক প্রিপেইড সিম থেকে ফি জমা দিন।\n\nপ্রথম SMS: BAB <space> User ID লিখে ১৬২২২ এ পাঠান।\nদ্বিতীয় SMS: BAB <space> Yes <space> PIN লিখে ১৬২২২ এ পাঠান।",
+    "howToApplyEn": "1. Visit bab.teletalk.com.bd\n2. Click Application Form\n3. Select post and fill details\n4. Upload Photo (300x300) and Signature (300x80)\n5. Pay fee via Teletalk SMS using User ID.",
+    "sourceWebsite": "http://www.bab.gov.bd",
+    "lastUpdated": "2026-04-01T09:00:00+06:00",
+    "vacancyQuota": {
+      "total": 15,
+      "merit": 0,
+      "freedomFighter": 0,
+      "ethnic": 0,
+      "disabled": 0
+    }
+  },
+  {
     "id": "bpsc-50th-bcs-2025",
     "title": "৫০তম বিসিএস নিয়োগ পরীক্ষা ২০২৫",
     "titleEn": "50th BCS Recruitment Examination 2025",
@@ -25,38 +58,58 @@
       "applyEnd": "2025-12-24",
       "examDate": "2026-04-10"
     },
-    "applicationFee": "৳৩০০ (টেলিটক SMS)",
+    "applicationFee": "৳৭০০",
     "applyLink": "https://bpsc.teletalk.com.bd",
     "officialNotification": "https://bpsc.gov.bd/sites/default/files/files/bpsc.gov.bd/page/circular_50th_bcs_2025.pdf",
-    "howToApply": "১. bpsc.teletalk.com.bd ভিজিট করুন\n২. 'Apply Online' এ ক্লিক করুন\n৩. রেজিস্ট্রেশন করুন (NID/Birth Cert)\n৪. ছবি (৩০০x৪০০) ও স্বাক্ষর (৩০০x৮০) আপলোড করুন\n৫. ফরম পূরণ করে সাবমিট করুন\n৬. Teletalk: BPSC <UserID> <PIN> to 16222\n৭. Applicant's Copy ডাউনলোড ও প্রিন্ট করুন",
-    "howToApplyEn": "1. Visit bpsc.teletalk.com.bd\n2. Click Apply Online\n3. Register with NID/Birth Certificate\n4. Upload photo (300x400) & signature (300x80)\n5. Fill & submit form\n6. SMS: BPSC <UserID> <PIN> to 16222\n7. Download & print Applicant's Copy",
+    "howToApply": "অনলাইনে bpsc.teletalk.com.bd এর মাধ্যমে আবেদন করুন।",
+    "howToApplyEn": "Apply online through bpsc.teletalk.com.bd",
     "sourceWebsite": "https://bpsc.gov.bd",
     "lastUpdated": "2025-12-04T10:00:00+06:00"
   },
   {
-    "id": "bab-recruitment-2026",
-    "title": "বাংলাদেশ অ্যাক্রেডিটেশন বোর্ড (BAB) নিয়োগ বিজ্ঞপ্তি ২০২৬",
-    "titleEn": "Bangladesh Accreditation Board (BAB) Recruitment 2026",
-    "organization": "বাংলাদেশ অ্যাক্রেডিটেশন বোর্ড",
-    "organizationEn": "Bangladesh Accreditation Board",
-    "ministry": "শিল্প মন্ত্রণালয়",
-    "ministryEn": "Ministry of Industries",
-    "division": "Dhaka",
+    "id": "fscd-recruitment-2026",
+    "title": "ফায়ার সার্ভিস ও সিভিল ডিফেন্স অধিদপ্তর নিয়োগ ২০২৬",
+    "titleEn": "Department of Fire Service and Civil Defence Recruitment 2026",
+    "organization": "ফায়ার সার্ভিস ও সিভিল ডিফেন্স অধিদপ্তর",
+    "organizationEn": "Department of Fire Service and Civil Defence",
+    "ministry": "স্বরাষ্ট্র মন্ত্রণালয়",
+    "ministryEn": "Ministry of Home Affairs",
+    "division": "All Bangladesh",
     "jobType": "Non-Cadre",
-    "circularRef": "36.09.0000.001.11.037.25/77",
-    "circularDate": "2026-04-01",
-    "payScale": "গ্রেড ১১-২০",
-    "payScaleEn": "Grade 11-20",
+    "payScale": "বিভিন্ন গ্রেড",
+    "payScaleEn": "Various Grades",
     "importantDates": {
-      "applyStart": "2026-04-06",
-      "applyEnd": "2026-05-05"
+      "applyStart": "2026-05-10",
+      "applyEnd": "2026-06-10"
     },
     "applicationFee": "৳১০০-৩০০",
-    "applyLink": "http://bab.teletalk.com.bd",
-    "officialNotification": "http://www.bab.gov.bd/sites/default/files/files/bab.portal.gov.bd/notices/circular_2026.pdf",
-    "howToApply": "অনলাইনে bab.teletalk.com.bd এর মাধ্যমে আবেদন করুন।",
-    "howToApplyEn": "Apply online through bab.teletalk.com.bd",
-    "sourceWebsite": "http://www.bab.gov.bd",
-    "lastUpdated": "2026-04-01T09:00:00+06:00"
+    "applyLink": "http://fscd.teletalk.com.bd",
+    "officialNotification": "http://fscd.gov.bd/notices/circular_2026.pdf",
+    "howToApply": "fscd.teletalk.com.bd এর মাধ্যমে আবেদন করুন।",
+    "howToApplyEn": "Apply through fscd.teletalk.com.bd",
+    "sourceWebsite": "http://fscd.gov.bd",
+    "lastUpdated": "2026-05-01T09:00:00+06:00"
+  },
+  {
+    "id": "bb-technician-2026",
+    "title": "বাংলাদেশ ব্যাংক জুনিয়র টেকনিশিয়ান নিয়োগ ২০২৬",
+    "titleEn": "Bangladesh Bank Junior Technician Recruitment 2026",
+    "organization": "বাংলাদেশ ব্যাংক",
+    "organizationEn": "Bangladesh Bank",
+    "division": "All Bangladesh",
+    "jobType": "Bank Job",
+    "payScale": "বিভিন্ন গ্রেড",
+    "payScaleEn": "Various Grades",
+    "importantDates": {
+      "applyStart": "2026-05-05",
+      "applyEnd": "2026-06-04"
+    },
+    "applicationFee": "৳২০০",
+    "applyLink": "https://erecruitment.bb.org.bd",
+    "officialNotification": "https://erecruitment.bb.org.bd/onlineapp/circulars.php",
+    "howToApply": "বাংলাদেশ ব্যাংক ই-রিক্রুটমেন্ট পোর্টালের মাধ্যমে আবেদন করুন।",
+    "howToApplyEn": "Apply through Bangladesh Bank e-Recruitment portal.",
+    "sourceWebsite": "https://bb.org.bd",
+    "lastUpdated": "2026-05-01T10:00:00+06:00"
   }
 ]
