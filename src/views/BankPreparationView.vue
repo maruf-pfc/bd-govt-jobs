@@ -111,6 +111,16 @@
 </template>
 
 <script setup lang="ts">
+import { useHead } from '@unhead/vue'
+
+useHead({
+  title: 'ব্যাংক জব প্রস্তুতি গাইডলাইন | সরকারি ব্যাংক ও বাংলাদেশ ব্যাংক',
+  meta: [
+    { name: 'description', content: 'সরকারি ব্যাংক ও বাংলাদেশ ব্যাংকের সিনিয়র অফিসার ও সহকারী পরিচালক (AD) পদের নিয়োগ প্রস্তুতির সিলেবাস ও কৌশল।' },
+    { name: 'keywords', content: 'Bank Job Preparation, Bangladesh Bank AD Preparation, সরকারি ব্যাংক প্রস্তুতি, ব্যাংক জব সিলেবাস' }
+  ]
+})
+
 const preliMarks = [
   { subject: 'বাংলা ভাষা ও সাহিত্য', marks: 25 },
   { subject: 'ইংরেজি', marks: 25 },

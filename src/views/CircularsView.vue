@@ -35,11 +35,20 @@
 
 <script setup lang="ts">
 import { onMounted, computed } from 'vue'
+import { useHead } from '@unhead/vue'
 import { useJobStore } from '@/stores/jobStore'
 import FilterBar from '@/components/FilterBar.vue'
 import JobCard from '@/components/JobCard.vue'
 
 const store = useJobStore()
+
+useHead({
+  title: 'সকল সরকারি নিয়োগ বিজ্ঞপ্তি (অক্টোবর ২০২৪) | BD Govt Jobs',
+  meta: [
+    { name: 'description', content: 'বর্তমানে চালু থাকা সকল সরকারি নিয়োগ বিজ্ঞপ্তির তালিকা। বিভাগ ও মন্ত্রণালয় অনুযায়ী ফিল্টার করে আপনার পছন্দের চাকরিটি খুঁজুন।' }
+  ]
+})
+
 onMounted(store.fetchJobs)
 
 const loading = computed(() => store.loading)

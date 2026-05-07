@@ -1,6 +1,6 @@
 {
   "name": "bd-govt-jobs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "type": "module",
   "scripts": {
@@ -16,8 +16,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.4",
+    "@unhead/vue": "^3.1.0",
     "pinia": "^3.0.4",
     "tailwindcss": "^4.2.4",
+    "unhead": "^3.1.0",
     "vue": "^3.5.32",
     "vue-router": "^5.0.4"
   },
