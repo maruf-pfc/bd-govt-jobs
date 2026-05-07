@@ -165,6 +165,12 @@ import type { Job } from '@/types'
 const route = useRoute()
 const store = useJobStore()
 
+onMounted(() => {
+  if (store.jobs.length === 0) {
+    store.fetchJobs()
+  }
+})
+
 const jobId = computed(() => route.params.id as string)
 const job = computed(() => store.jobs.find((j) => j.id === jobId.value))
 
